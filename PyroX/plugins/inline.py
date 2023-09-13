@@ -1,6 +1,6 @@
 import config 
 import requests
-
+from config import BOTUSERNAME
 from PyroX import PyroX 
 from PyroX import MODULE, bot, INFO as GET_INFO
 from PyroX.helpers.help_func import spacebin
@@ -97,7 +97,10 @@ async def get_helpdex(_, message):
         await message.edit("`. . .`",)
         result = await PyroX.get_inline_bot_results(
             PyroX.bot.username,
+            BOTUSERNAME,  # Use the BOTUSERNAME variable here
             "help"
+            
+            
         )
 
         if result:
@@ -121,7 +124,9 @@ async def alive_dex(_, message):
         await message.edit("`. . .`")
         result = await PyroX.get_inline_bot_results(
             PyroX.bot.username,
+           BOTUSERNAME,  # Use the BOTUSERNAME variable here
             "alive"
+            
         )
 
         if result:
